@@ -2,17 +2,24 @@
     Events Used:
         1. mouseover
         2. mouseleave
-
+        3. mousedown
+        4. mouseup
+        5. dblclick
 */
 
-// hover for nav links
-let anchors = document.getElementsByClassName('nav-link')
-anchors[0].addEventListener('mouseover', () => { anchors[0].style.color= 'red'; });
-anchors[1].addEventListener('mouseover', () => { anchors[1].style.color= 'green'; });
-anchors[2].addEventListener('mouseover', () => { anchors[2].style.color= 'blue'; });
-anchors[3].addEventListener('mouseover', () => { anchors[3].style.color= 'pink'; });
+// hover over nav links
+const anchor = document.querySelectorAll('.nav-link');
+anchor.forEach((anchorOn) => { anchorOn.addEventListener('mouseover', () => { anchorOn.style.color = 'blue' })});
+anchor.forEach((anchorOff) => { anchorOff.addEventListener('mouseleave', () => { anchorOff.style.color = ''})}); 
 
-anchors[0].addEventListener('mouseleave', () => { anchors[0].style.color= ''; });
-anchors[1].addEventListener('mouseleave', () => { anchors[1].style.color= ''; });
-anchors[2].addEventListener('mouseleave', () => { anchors[2].style.color= ''; });
-anchors[3].addEventListener('mouseleave', () => { anchors[3].style.color= ''; });
+// click and release fun bus header logo
+const logoHead = document.querySelector('.logo-heading');
+logoHead.addEventListener('mousedown', () => { logoHead.innerHTML = "♪┏(・o･)┛♪" });
+logoHead.addEventListener('mouseup', () => { logoHead.innerHTML = "Fun Bus"})
+
+// double click any of the text wrapped in p tags
+const theyStealing = () => { alert('Hey, no copying my content.') }
+
+const para = document.querySelectorAll('p');
+para.forEach((function(elem){ elem.addEventListener('dblclick', theyStealing) }));
+
