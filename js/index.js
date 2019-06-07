@@ -8,8 +8,8 @@
         6. dblclick
         7. keydown
         8. contextmenu
-        9. 
-        10. 
+        9. drag
+        x. dragend
 */
 
 // hover over nav links
@@ -38,3 +38,10 @@ document.addEventListener('keydown', () => { console.log(`Join the Fun Bus!`) })
 // right click 'sign me up!' buttons on the bottom
 const button = document.querySelectorAll('.btn');
 button.forEach((function(elem) { elem.addEventListener('contextmenu', () => { elem.innerHTML = `Don't inspect me`; elem.style.color = 'orange'; elem.style.background = 'white'; }) }));
+
+// drag image in 'pick your destination'
+const destinationImg = document.querySelector('.content-destination img');
+destinationImg.addEventListener('drag', () => { destinationImg.style.opacity = '.2' });
+
+// drop image back onto it's normal spot
+destinationImg.addEventListener('dragend', () => { destinationImg.style.opacity = '1' })
