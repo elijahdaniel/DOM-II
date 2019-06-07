@@ -6,11 +6,15 @@
         4. mouseup
         5. copy
         6. dblclick
+        7. keydown
+        8. 
+        9. 
+        10. 
 */
 
 // hover over nav links
 const anchor = document.querySelectorAll('.nav-link');
-anchor.forEach((anchorOn) => { anchorOn.addEventListener('mouseover', () => { anchorOn.style.color = 'blue'; })});
+anchor.forEach((anchorOn) => { anchorOn.addEventListener('mouseover', () => { anchorOn.style.color = 'orange'; })});
 anchor.forEach((anchorOff) => { anchorOff.addEventListener('mouseleave', () => { anchorOff.style.color = ''; })}); 
 
 // click and release fun bus header logo
@@ -27,3 +31,6 @@ para.forEach((function(elem){ elem.addEventListener('copy', stealing) }));
 // double click header photo (bus in the sand)
 const headImage = document.querySelector('.intro img');
 headImage.addEventListener('dblclick', () => { headImage.setAttribute('src', 'img/beach.png') })
+
+// open console and press any key
+document.addEventListener('keydown', () => { console.log(`Join the Fun Bus!`) })
