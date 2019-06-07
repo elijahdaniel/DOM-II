@@ -7,7 +7,7 @@
         5. copy
         6. dblclick
         7. keydown
-        8. 
+        8. contextmenu
         9. 
         10. 
 */
@@ -33,4 +33,8 @@ const headImage = document.querySelector('.intro img');
 headImage.addEventListener('dblclick', () => { headImage.setAttribute('src', 'img/beach.png') })
 
 // open console and press any key
-document.addEventListener('keydown', () => { console.log(`Join the Fun Bus!`) })
+document.addEventListener('keydown', () => { console.log(`Join the Fun Bus!`) });
+
+// right click 'sign me up!' buttons on the bottom
+const button = document.querySelectorAll('.btn');
+button.forEach((function(elem) { elem.addEventListener('contextmenu', () => { elem.innerHTML = `Don't inspect me`; elem.style.color = 'orange'; elem.style.background = 'white'; }) }));
